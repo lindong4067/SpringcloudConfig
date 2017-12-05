@@ -1,0 +1,16 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/lindong4067/SpringcloudConfig/
+          search-paths: respo
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8889/eureka/

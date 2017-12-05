@@ -1,0 +1,26 @@
+server:
+  port: 8882
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
+      discovery:
+        enabled: true
+        service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+#    password:
+#    username:
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8889/eureka/
+#接口调用取消身份验证
+management:
+  security:
+    enabled: false
